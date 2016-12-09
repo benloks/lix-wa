@@ -7,10 +7,11 @@
 
 	<!-- jQuery (required) & jQuery UI + theme (optional) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.js"></script>
+	<script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.extension-typing.js"></script>
 
 	<!-- keyboard widget css & script (required) -->
 	<link href="keyboard-basic.css" rel="stylesheet">
-	<script src="jquery.keys.js"></script>
 
 	<style>
 		@font-face {
@@ -51,32 +52,38 @@
   <textarea id ="map" type="text" rows="5"></textarea>
 </div>
 
+</body>
+
 <script>
-$('#map')
-	.keyboard({
-		alwaysOpen: true,
-		layout: 'custom',
-		customLayout: {
-			'normal': [
-				'\u1050(`) \u1041(1) \u1042(2) \u1043(3) \u1044(4) \u1045(5) \u1046(6) \u1047(7) \u1048(8) \u1049(9) \u1040(0) - = {bksp}',
-				'{tab} \u1006(q) \u1010(w) \u1014(e) \u1019(r) \u1021(t) \u1015(y) \u1000(u) \u1004(i) \u101E(o) \u1005(p) \u101F([) \u1028(]) \u104F(\\)',
-				'\u1031(a) \u103B(s) \u102D(d) \u103A(f) \u102B(g) \u1037(h) \u103C(j) \u102F(k) \u1030(l) \u1038(;) \u1012(\') {enter}',
-				'{shift} \u1016(z) \u1011(x) \u1001(c) \u101C(v) \u1018(b) \u100A(n) \u102C\u103A(m) \u101A(,) \u1063\u103A(.) / {shift}',
-				'{space}'
-			],
-			'shift': [
-				'\u100E(~) \u100D(!) \u1052(@) \u100B(#) \u1053($) \u1054(%) \u1055(^) \u101B(&) \u1002(*) ( ) _ + {bksp}',
-				'{tab} \u1008(Q) \u101D(W) \u1023(E) \u1064(R) \u1024(T) \u104C(Y) \u1025(U) \u104D(I) \u103F(O) \u100F(P) \u1027({) \u102A(}) \u1051(|)',
-				'\u1017(A) \u103E(S) \u102E(D) \u1060(F) \u103D(G) \u1036(H) \u1032(J) \u102F(K) \u1013(L) \u1002(:) \u201C(") {enter}',
-				'{shift} \u1007(Z) \u100C(X) \u1003(C) \u1020(V) \u101A(B) \u100A(N) \u1026(M) \u104A(<) \u1062\u103A(>) ? {shift}',
-				'{space}'
-			]
-		},
-		usePreview: false
-	});
+$(function() {
+		$('#map').keyboard({
+			alwaysOpen: true,
+			layout: 'custom',
+			usePreview: false,
+			customLayout: {
+				'normal': [
+					'\u1050(`) \u1041(1) \u1042(2) \u1043(3) \u1044(4) \u1045(5) \u1046(6) \u1047(7) \u1048(8) \u1049(9) \u1040(0) - = {bksp}',
+					'{tab} \u1006(q) \u1010(w) \u1014(e) \u1019(r) \u1021(t) \u1015(y) \u1000(u) \u1004(i) \u101E(o) \u1005(p) \u101F([) \u1028(]) \u104F(\\)',
+					'\u1031(a) \u103B(s) \u102D(d) \u103A(f) \u102B(g) \u1037(h) \u103C(j) \u102F(k) \u1030(l) \u1038(;) \u1012(\') {enter}',
+					'{shift} \u1016(z) \u1011(x) \u1001(c) \u101C(v) \u1018(b) \u100A(n) \u102C\u103A(m) \u101A(,) \u1063\u103A(.) / {shift}',
+					'{space}'
+				],
+				'shift': [
+					'\u100E(~) \u100D(!) \u1052(@) \u100B(#) \u1053($) \u1054(%) \u1055(^) \u101B(&) \u1002(*) ( ) _ + {bksp}',
+					'{tab} \u1008(Q) \u101D(W) \u1023(E) \u1064(R) \u1024(T) \u104C(Y) \u1025(U) \u104D(I) \u103F(O) \u100F(P) \u1027({) \u102A(}) \u1051(|)',
+					'\u1017(A) \u103E(S) \u102E(D) \u1060(F) \u103D(G) \u1036(H) \u1032(J) \u102F(K) \u1013(L) \u1002(:) \u201C(") {enter}',
+					'{shift} \u1007(Z) \u100C(X) \u1003(C) \u1020(V) \u101A(B) \u100A(N) \u1026(M) \u104A(<) \u1062\u103A(>) ? {shift}',
+					'{space}'
+				]
+			}
+		})
+		// activate typing extension
+		.addTyping({
+			showTyping: true,
+			delay: 250
+		});
+});
 
 </script>
-
-</body>
 
 </html>
