@@ -4,5 +4,5 @@ Works best on desktop.
 
 ### Code, fonts, etc.
 + On-screen virtual keyboard from [Mottie/Keyboard](https://github.com/Mottie/Keyboard)
-+ Keyboard layout derived from [Ben01/kanyawtypist](https://github.com/Ben01/kanyawtypist)
++ Keyboard layout derived from [Ben01/kanyawtypist](https://github.com/Ben01/kanyawtypist) and Drum Publications, with input from the [Foundation for Applied Linguistics](http://www.fal-thai.org)
 + Font used is [Padauk](http://software.sil.org/padauk/) from SIL - a Unicode-compliant font family

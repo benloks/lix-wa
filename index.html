@@ -3,20 +3,20 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Keyboard tests</title>
+	<title>Type Sgaw Karen online</title>
 
 	<!-- jQuery (required) & jQuery UI + theme (optional) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.js"></script>
 	<script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.extension-typing.js"></script>
 
 	<!-- keyboard widget css & script (required) -->
-	<link href="keyboard-basic.css" rel="stylesheet">
+	<link href="./css/keyboard-basic.css" rel="stylesheet">
 
 	<style>
 		@font-face {
 			font-family: 'Padauk';
-			src: url('Padauk-Regular.ttf');
+			src: url('./font/Padauk-Regular.ttf');
 		}
 		.ui-keyboard-button {
 			font-family: 'Padauk';
@@ -42,11 +42,33 @@
 				width: 100%;
 			}
 		}
+		#top-row {
+			padding: 1% 10%;
+			text-align: center;
+		}
+		.top-tab {
+			padding: 0 5%;
+			text-align: center;
+			font-family: monospace;
+			font-size: 1.4em;
+			color: black;
+			text-decoration: underline;
+		}
+		.top-tab:hover {
+			background-color: grey;
+			color: white;
+		}
 	</style>
 
 </head>
 
 <body>
+
+<div id="top-row">
+	<a href="/info/"><span class="top-tab">Info</span></a>
+	<a href="/mobile/"><span class="top-tab">Mobile</span></a>
+	<a href="https://www.github.com/benloks/lix-wa"><span class="top-tab">Code</span></a>
+</div>
 
 <div id="wrap">
   <textarea id ="map" type="text" rows="5"></textarea>
