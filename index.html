@@ -24,9 +24,11 @@
 		}
 		body {
 			margin-top: 10px;
+			font-family: 'Padauk', san-serif;
 		}
 		select {
 			font-size: 1em;
+			font-family: 'Padauk', monospace;
 		}
 		#map {
 			font-family: 'Padauk', sans-serif;
@@ -40,6 +42,7 @@
 			width: 80%;
 			height: 50%;
 			text-align: right;
+			font-size: 1em;
 		}
 		@media (max-width: 700px) {
 			#wrap {
@@ -75,8 +78,10 @@
 </div>
 
 <div id="wrap">
+	Layout:
 	<select>
-		<option value="karenKNU">KNU</option>
+		<option value="karenKNU">KarenKNU</option>
+		<option value="MUA-Sgaw">MUA စှီၤ</option>
 		<option value="qwerty">QWERTY</option>
 	</select>
 	<br><br>
@@ -105,6 +110,26 @@ $(function() {
 			'{space}'
 		]
 	}
+
+	jQuery.keyboard.layouts['MUA-Sgaw'] = {
+		'name' : 'MUA-Sgaw',
+		'lang' : ['ksw'],
+		'normal': [
+			'\u1041(1) \u1042(2) \u1043(3) \u1044(4) \u1045(5) \u1046(6) \u1047(7) \u1048(8) \u1049(9) \u1040(0) {bksp}',
+			'\u1063(q) \u1010(w) \u1014(e) \u1019(r) \u1021(t) \u1015(y) \u1000(u) \u1004(i) \u101E(o) \u1005(p)',
+			'\u1064(a) \u1062(s) \u102E(d) \u103A(f) \u102B(g) \u1037(h) \u1032(j) \u102F(k) \u1012(l) \u1038(;) {enter}',
+			'{shift} \u1016(z) \u1011(x) \u1001(c) \u101C(v) \u1018(b) \u100A(n) \u102C(m) {shift}',
+			'{space}'
+		],
+		'shift': [
+			'\u1041(!) \u1042(@) \u1043(#) \u1044($) \u1045(%) \u1046(^) \u1047(&) \u1048(*) \u1049(\u0028) \u1040(\u0029) {bksp}',
+			'\u1006(Q) \u1061(W) \u101D(E) \u1019(R) \u1021(T) \u1015(Y) \u1000(U) \u1027(I) \u101F(O) \u100F(P)',
+			'\u103B(A) \u103E(S) \u102D(D) \u1060(F) \u103D(G) \u1036(H) \u103C(J) \u1030(K) \u1012(L) \u1002(:) {enter}',
+			'{shift} \u1016(Z) \u1011(X) \u1003(C) \u101C(V) \u1018(B) \u101B(N) \u101A(M) {shift}',
+			'{space}'
+		]
+	}
+
 
 		$('#map').keyboard({
 			usePreview: false,
