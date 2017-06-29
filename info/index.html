@@ -4,8 +4,21 @@
 	<meta charset="utf-8">
   <title>Type Sgaw Karen online</title>
   <style>
+	@font-face {
+		font-family: 'Padauk';
+		src: url('../font/Padauk-Regular.ttf');
+	}
 	body {
 		font-family: sans-serif;
+	}
+	.karen {
+		font-family: 'Padauk';
+		font-size: 2em;
+		font-language-override: "ksw";
+	}
+	.karen-nographite {
+		font-family: 'Padauk';
+		font-size: 2em;
 	}
 	.info {
 		margin: 5%;
@@ -43,8 +56,11 @@
 		<p>By typing in this on-screen keyboard, S'gaw Karen users can write their language using the proper Unicode codepoints assigned for the lix wa script.<p>
 		<p><b>How to use the on-screen keyboard :</b> Set your keyboard to English (QWERTY) and start typing. Or, just click on the letter you want. You can then copy and paste your text into another program.</p>
 		<p><b>Fonts :</b> Lix wa characters for Sgaw Karen are included in the Myanmar Unicode set, but not all fonts support the language completely. On this page, we use <a href="http://software.sil.org/padauk/download/">Padauk</a>, a Unicode-compliant font for all Myanmar languages. If you copy and paste your text into another program, please make sure you are using Padauk there also, or another Unicode font with support for Sgaw Karen characters.</p>
+		<p>For users of Firefox, this site also displays Padauk's language-specific glyphs for S'gaw Karen. Graphite must be enabled for this to work. For other browsers, this site uses the standard Burmese forms. To see if it's working in your browser, compare these two forms:</p>
+		<span class="karen">နွဲၣ်မုၣ်ပှၢ်</span> vs.
+		<span class="karen-nographite">နွဲၣ်မုၣ်ပှၢ်</span>
 		<p><b>Mobile users :</b> This keyboard is designed for desktop computers. To type in lix wa on your smartphone, <a href="../mobile/">download a Unicode Myanmar keyboard</a> and follow the instructions to switch your phone's keyboard. Then you don't need to use this page.</p>
-		<p><b>Other layouts :</b> This keyboard uses a layout from the KarenKNU font.<p>
+		<p><b>Other layouts :</b> You can choose between two different layouts using the dropdown on the top right. If you want us to add another layout, <a href="https://github.com/benloks/lix-wa/issues/new">submit a request on GitHub</a>.<p>
 	</div>
 </div>
 </body>
