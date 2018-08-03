@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Type Sgaw Karen online</title>
+	<title>Unicode S'gaw Karen keyboard - no downloads or installation required</title>
+	<meta name="description" content="Use this simple on-screen keyboard to type in S'gaw Karen or related languages. Just type naturally or click on the letters you want, then copy-and-paste your text into another tab or application.">
 
 	<!-- jQuery (required) & jQuery UI + theme (optional) -->
 	<script src="./js/jquery-3.1.1.min.js"></script>
@@ -69,6 +70,48 @@
 			background-color: grey;
 			color: white;
 		}
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 140px;
+			background-color: grey;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px;
+			position: absolute;
+			z-index: 1;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -75px;
+			opacity: 0;
+			transition: opacity 0.3s;
+			font-size: 0.9em;
+		}
+		.tooltip .tooltiptext::after {
+	    content: "";
+	    position: absolute;
+	    top: 100%;
+	    left: 50%;
+	    margin-left: -5px;
+	    border-width: 5px;
+	    border-style: solid;
+	    border-color: grey transparent transparent transparent;
+		}
+		.tooltip:hover .tooltiptext {
+    	visibility: visible;
+    	opacity: 1;
+		}
+		button {
+			font-size: 1.4em;
+			font-family: monospace;
+			text-align: center;
+			background-color: white;
+			padding: 5px 10px;
+		}
 	</style>
 
 </head>
@@ -89,10 +132,30 @@
 		<option value="qwerty">QWERTY</option>
 	</select>
 	<br><br>
-  <textarea id ="map" type="text" rows="5"></textarea>
+  <textarea id ="map" type="text" rows="5" placeholder="Click inside this text area to open the on-screen keyboard."></textarea>
+	<div class="tooltip">
+		<button onclick="copyToClipboard()" onmouseout="outFunc()">
+			<span class="tooltiptext" id="myTooltip">Copy to my clipboard</span>
+			Copy text
+		</button>
+	</div>
 </div>
 
 </body>
+
+<script>
+function copyToClipboard() {
+	var copyText = document.getElementById("map");
+	copyText.select();
+	document.execCommand("copy");
+	var tooltip = document.getElementById("myTooltip");
+	tooltip.innerHTML = "Copied!";
+}
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
 
 <script>
 $(function() {
@@ -169,6 +232,6 @@ $(function() {
   ga('create', 'UA-103003222-1', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script
 
 </html>
