@@ -92,18 +92,8 @@
 			font-size: 0.9em;
 		}
 		.tooltip .tooltiptext::after {
-	    content: "";
-	    position: absolute;
-	    top: 100%;
-	    left: 50%;
-	    margin-left: -5px;
-	    border-width: 5px;
-	    border-style: solid;
-	    border-color: grey transparent transparent transparent;
 		}
 		.tooltip:hover .tooltiptext {
-    	visibility: visible;
-    	opacity: 1;
 		}
 		button {
 			font-size: 1.4em;
@@ -132,7 +122,6 @@
 		<option value="qwerty">QWERTY</option>
 	</select>
 	<br><br>
-  <textarea id ="map" type="text" rows="5" placeholder="Click inside this text area to open the on-screen keyboard."></textarea>
 	<div class="tooltip">
 		<button onclick="copyToClipboard()" onmouseout="outFunc()">
 			<span class="tooltiptext" id="myTooltip">Copy to my clipboard</span>
@@ -232,6 +221,5 @@ $(function() {
   ga('create', 'UA-103003222-1', 'auto');
   ga('send', 'pageview');
 
-</script
 
 </html>
