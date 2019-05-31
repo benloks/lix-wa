@@ -13,6 +13,7 @@
 
 	<!-- keyboard widget css & script (required) -->
 	<link href="./css/keyboard-basic.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<style>
 		@font-face {
@@ -48,27 +49,12 @@
 			height: 50%;
 			text-align: right;
 			font-size: 1em;
+			padding-top: 20px;
 		}
 		@media (max-width: 700px) {
 			#wrap {
 				width: 100%;
 			}
-		}
-		#top-row {
-			padding: 1% 10%;
-			text-align: center;
-		}
-		.top-tab {
-			padding: 0 5%;
-			text-align: center;
-			font-family: monospace;
-			font-size: 1.4em;
-			color: black;
-			text-decoration: underline;
-		}
-		.top-tab:hover {
-			background-color: grey;
-			color: white;
 		}
 		.tooltip {
 			position: relative;
@@ -92,8 +78,18 @@
 			font-size: 0.9em;
 		}
 		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: grey transparent transparent transparent;
 		}
 		.tooltip:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
 		}
 		button {
 			font-size: 1.4em;
@@ -102,16 +98,69 @@
 			background-color: white;
 			padding: 5px 10px;
 		}
+		.karen {
+			font-family: 'Padauk';
+			font-size: 2em;
+			font-language-override: "ksw";
+		}
+		.karen-nographite {
+			font-family: 'Padauk';
+			font-size: 2em;
+		}
+		.info {
+			text-align: center;
+		}
+		.info h1 {
+			font-size: 1.5em;
+			font-family: monospace;
+		}
+		.info p {
+			font-size: 1.1em;
+			text-align: justify;
+		}
+		.material-icons.md-48 { font-size: 48px; }
+		.link-bar {
+			width: 100%;
+			padding-top: 20px;
+		}
+		.link-block {
+			width: 20%;
+			margin-left: 6%;
+			margin-right: 6%;
+			text-align: center;
+			font-size: 1.4em;
+			display: inline-block;
+		}
+		.link-block a {
+			text-decoration: none;
+			color: black;
+		}
+		.link-block:hover {
+			background-color: grey;
+			color: white;
+		}
+		#mobile-alert {
+			display: block;
+			color: red;
+			margin: 5%;
+		}
+		@media screen and (min-width: 900px) {
+			#mobile-alert { display: none; }
+		}
 	</style>
 
 </head>
 
 <body>
 
-<div id="top-row">
+<!-- <div id="top-row">
 	<a href="/info/"><span class="top-tab">Info</span></a>
 	<a href="/mobile/"><span class="top-tab">Mobile</span></a>
 	<a href="https://www.github.com/benloks/lix-wa"><span class="top-tab">Code</span></a>
+</div> -->
+
+<div id="mobile-alert">
+	<p class="alert">Hi there! This site is designed for desktop browsers. Since you seem to be using a mobile device, you may find it easier to <a href="http://lixwa.com/mobile/">install a keyboard app</a> instead.</p>
 </div>
 
 <div id="wrap">
@@ -122,11 +171,30 @@
 		<option value="qwerty">QWERTY</option>
 	</select>
 	<br><br>
+	<textarea id ="map" type="text" rows="5" placeholder="Click inside this text area to open the on-screen keyboard."></textarea>
 	<div class="tooltip">
 		<button onclick="copyToClipboard()" onmouseout="outFunc()">
 			<span class="tooltiptext" id="myTooltip">Copy to my clipboard</span>
 			Copy text
 		</button>
+</div>
+
+<div class="info">
+	<div id="EN">
+		<p>This on-screen keyboard is designed for typing in <a href="https://en.wikipedia.org/wiki/S%27gaw_Karen_language">S'gaw Karen</a>, a language spoken in Thailand and Myanmar. Many S'gaw Karen people use "lix wa" characters to write their language, which are included in the <a href="https://www.unicode.org/faq/myanmar.html">Myanmar Unicode range</a>. However, common Burmese fonts and keyboards often do not support the additional characters that are used in S'gaw Karen, which makes it very hard to communicate in Karen online. By typing in this on-screen keyboard, S'gaw Karen users can write their language using the proper Unicode codepoints, no downloads required.<p>
+		<p><b>How to use the on-screen keyboard :</b> Set your keyboard to English (QWERTY), click inside the text area above, and start typing. Or, just click on the letter you want. You can then copy and paste your text into another program.</p>
+	</div>
+</div>
+
+<div class="link-bar">
+	<div class="link-block">
+		<a href="/info/"><i class="material-icons md-48">info</i><br>More info</a>
+	</div>
+	<div class="link-block">
+		<a href="/mobile/"><i class="material-icons md-48">phone_android</i><br>Mobile</a>
+	</div>
+	<div class="link-block">
+		<a href="https://www.github.com/benloks/lix-wa"><i class="material-icons md-48">code</i><br>Code</a>
 	</div>
 </div>
 
@@ -221,5 +289,6 @@ $(function() {
   ga('create', 'UA-103003222-1', 'auto');
   ga('send', 'pageview');
 
+</script>
 
 </html>
